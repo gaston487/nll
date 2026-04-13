@@ -1,67 +1,106 @@
-/* Configuración General */
+/* Estética Base: Oscura y Minimalista */
 body {
+    background-color: #111; /* Fondo negro profundo */
+    color: #999;            /* Texto gris suave para no cansar la vista */
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.6;
-    color: #222;
     max-width: 650px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #fdfdfd;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
 /* Encabezado */
 header {
     margin-bottom: 50px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
 }
 
-h1 {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.site-title {
+    color: #eee;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* Lista de Posts en el Index */
-.post-lista {
-    list-style: none;
-    padding: 0;
+.subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 25px 0;
+    font-style: italic;
 }
 
-.post-item {
-    margin-bottom: 15px;
+/* Navegación */
+nav {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.fecha {
-    color: #888;
+    gap: 15px;
     font-size: 0.85rem;
 }
 
-/* Links */
-a {
-    color: #000;
+nav a {
+    color: #888;
     text-decoration: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid transparent;
 }
 
-a:hover {
-    border-bottom-color: #000;
+nav a:hover {
+    color: #eee;
+    border-bottom: 1px solid #444;
 }
 
-/* Imágenes */
+/* Lista de Entradas */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.post-list li {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: flex-start;
+}
+
+.post-date {
+    min-width: 110px; /* Alinea los títulos verticalmente */
+    color: #444;      /* Fecha en gris oscuro */
+    font-size: 0.85rem;
+}
+
+.post-list a {
+    color: #bbb;
+    text-decoration: underline;
+    text-decoration-color: #333;
+    text-underline-offset: 4px;
+}
+
+.post-list a:hover {
+    color: #fff;
+    text-decoration-color: #888;
+}
+
+/* Imágenes en los posts */
 img {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 20px 0;
-    filter: grayscale(20%); /* Opcional: toque estético */
+    filter: grayscale(100%);
+    opacity: 0.8;
+    margin: 30px 0;
+    transition: 0.3s;
 }
 
-/* Navegación dentro de los posts */
-nav {
-    margin-bottom: 30px;
-    font-size: 0.9rem;
+img:hover {
+    filter: none;
+    opacity: 1;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 500px) {
+    .post-list li {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .post-date {
+        margin-bottom: 5px;
+    }
 }
